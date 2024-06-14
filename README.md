@@ -1,4 +1,4 @@
-ThinkStats2
+ThinkStats2 - Liam McConlogue
 ===========
 
 [Order *Think Stats* from Amazon.com](http://amzn.to/1ljRCJH).
