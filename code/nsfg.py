@@ -3,6 +3,8 @@ by Allen B. Downey, available from greenteapress.com
 
 Copyright 2010 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+
+NSFG: National Survey of Family Growth
 """
 
 import sys
@@ -22,8 +24,8 @@ def ReadFemResp(dct_file='2002FemResp.dct',
 
     returns: DataFrame
     """
-    dct = thinkstats2.ReadStataDct(dct_file)
-    df = dct.ReadFixedWidth(dat_file, compression='gzip', nrows=nrows)
+    dct = thinkstats2.ReadStataDct(dct_file) # Obj contains info from dct (dictionary)
+    df = dct.ReadFixedWidth(dat_file, compression='gzip', nrows=nrows) # df: datafile: DataFrame from pandas
     CleanFemResp(df)
     return df
 
@@ -71,7 +73,7 @@ def CleanFemPreg(df):
 
     df.babysex.replace([7, 9], np.nan, inplace=True)
     df.nbrnaliv.replace([9], np.nan, inplace=True)
-
+    
     # birthweight is stored in two columns, lbs and oz.
     # convert to a single column in lb
     # NOTE: creating a new column requires dictionary syntax,
